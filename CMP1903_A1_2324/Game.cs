@@ -8,6 +8,23 @@ namespace CMP1903_A1_2324
 {
     internal class Game
     {
+        private static Random random = new Random();
+
+        private static int RollDie()
+        {
+            return random.Next(1,7)
+        }
+
+        public static int RollThreeDice()
+        {
+            int total = 0:
+            for(int i = 0; i < 3; i++)
+            {
+                total +=RollDie()
+            }
+            return total
+        }
+
         /*
          * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
          *
