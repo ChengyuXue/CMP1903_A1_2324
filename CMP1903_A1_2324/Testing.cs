@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,38 +9,18 @@ namespace CMP1903_A1_2324
 {
     internal class Testing
     {
-        // Method to test the Die class
-        public static void TestDie()
+        // Method to test the Die and Game classes
+        public static void Test()
         {
+            // Test Die class
             Die die = new Die();
-            int rollResult = die.Roll();
-            
-            // Test that the rolled value is between 1 and 6
-            Debug.Assert(rollResult >= 1 && rollResult <= 6, "Die roll result is out of range.");
-            Console.WriteLine("Die Roll Result: " + rollResult);
-        }
+            int rollValue = die.Roll();
+            Debug.Assert(rollValue >= 1 && rollValue <= 6, "Die roll should be between 1 and 6");
 
-        // Method to test the Game class
-        public static void TestGame()
-        {
-            int expectedTotal = 0;
-            for (int i = 0; i < 3; i++)
-            {
-                expectedTotal += new Die().Roll(); // Roll a die and add its value to the expected total
-            }
-
-            int actualTotal = Game.RollThreeDice();
-
-            // Test that the total of three dice rolls matches the expected total
-            Debug.Assert(actualTotal == expectedTotal, "Total of three dice rolls does not match the expected total.");
-            Console.WriteLine("Total of three dice rolls: " + actualTotal);
-        }
-
-        // Main method to run the tests
-        public static void Main(string[] args)
-        {
-            TestDie();
-            TestGame();
+            // Test Game class
+            Game game = new Game();
+            int sum = game.RollDice();
+            Debug.Assert(sum >= 3 && sum <= 18, "Sum of three dice should be between 3 and 18");
         }
     }
 }
