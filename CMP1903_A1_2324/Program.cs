@@ -10,12 +10,12 @@ namespace CMP1903_A1_2324
     {
         static void Main(string[] args)
         {
-            // Create a Game object and call its methods
-            Game game = new Game();
-            game.RollDice();
-
             // Create a Testing object to verify the output and operation of the other classes
             Testing.Test();
+
+            // Prompt the user to press a key before closing the console window
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }

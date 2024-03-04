@@ -9,6 +9,7 @@ namespace CMP1903_A1_2324
 {
     internal class Game
     {
+        //Array to hold three dice objects
         private Die[] dice = new Die[3];
 
         // Constructor
