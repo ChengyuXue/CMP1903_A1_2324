@@ -11,11 +11,28 @@ namespace CMP1903_A1_2324
         static void Main(string[] args)
         {
             // Create a Testing object to verify the output and operation of the other classes
-            Testing.Test();
+            Game game = Testing.Test();
 
-            // Prompt the user to press a key before closing the console window
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            // Roll dice continuously until the user decides to stop
+            while (true)
+            {
+                // Ask the user if they want to roll again
+                Console.WriteLine("Press (Y) to roll again or press anyother key to exit the game");
+                char response = char.ToUpper(Console.ReadKey().KeyChar);
+                // An if else statement that will either run the RollDice method or exit the loop
+                if (response == 'Y')
+                {
+                    Console.WriteLine("\nRolling dice");
+                    game.RollDice();
+                }
+                else
+                {
+                    Console.WriteLine("\nExiting the program");
+                    break;
+                }
+
+            }
         }
+
     }
 }
