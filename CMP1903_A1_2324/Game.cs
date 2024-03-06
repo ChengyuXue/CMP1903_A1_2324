@@ -21,13 +21,15 @@ namespace CMP1903_A1_2324
             }
         }
 
-        // Method to roll three dice, sum their values, and report the total
+        // Method to roll three dice, sum their values, and report the total and individual die rolls
         public int RollDice()
         {
             int total = 0;
             for (int i = 0; i < dice.Length; i++)
             {
-                total += dice[i].Roll();
+                int rollResult = dice[i].Roll();
+                Console.WriteLine($"Die {i + 1} rolled: {rollResult}");
+                total += rollResult;
             }
             Console.WriteLine($"Total of three dice rolls: {total}");
             return total;
